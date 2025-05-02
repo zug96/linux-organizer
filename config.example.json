@@ -1,0 +1,37 @@
+{
+    "source_directories": [
+      "~/Downloads",
+      "~/Área de trabalho"
+    ],
+    "destination_directories": {
+      "Imagens": "~/Imagens",
+      "Documentos": "~/Documentos",
+      "Videos": "~/Videos",
+      "Musicas": "~/Musicas",
+      "Scripts": "~/Scripts",
+      "Outros": "~/Outros"
+    },
+    "extension_map": {
+      ".jpg": "Imagens", ".jpeg": "Imagens", ".png": "Imagens", ".gif": "Imagens",
+      ".bmp": "Imagens", ".svg": "Imagens", ".webp": "Imagens", ".heic": "Imagens",
+      ".avif": "Imagens",
+      ".pdf": "Documentos", ".doc": "Documentos", ".docx": "Documentos",
+      ".txt": "Documentos", ".odt": "Documentos", ".rtf": "Documentos",
+      ".md": "Documentos", ".epub": "Documentos", ".xls": "Documentos",
+      ".xlsx": "Documentos", ".ods": "Documentos", ".csv": "Documentos",
+      ".ppt": "Documentos", ".pptx": "Documentos", ".odp": "Documentos",
+      ".mp4": "Videos", ".avi": "Videos", ".mkv": "Videos", ".mov": "Videos",
+      ".wmv": "Videos", ".flv": "Videos", ".webm": "Videos",
+      ".mp3": "Musicas", ".wav": "Musicas", ".flac": "Musicas", ".ogg": "Musicas",
+      ".aac": "Musicas", ".m4a": "Musicas",
+      ".sh": "Scripts", ".py": "Scripts", ".js": "Scripts", ".rb": "Scripts"
+    },
+    "ignored_extensions": [
+      ".zip", ".rar", ".tar", ".gz", ".7z", ".bz2",
+      ".iso", ".img",
+      ".deb", ".appimage",
+      ".part", ".crdownload", ".tmp"
+    ],
+    "log_file_path": "~/Scripts/organizador_py.log",
+    "desktop_dir_name": "Área de trabalho"
+  }
