@@ -65,3 +65,36 @@
 2025-05-02 01:00:01 - ==============================================
 2025-05-02 01:00:01 - Execução do script concluída.
 2025-05-02 01:00:01 - ==============================================
+
+2025-05-02 03:00:01 - ==============================================
+2025-05-02 03:00:01 - Iniciando execução do script organizador...
+2025-05-02 03:00:01 - Diretórios de origem: /home/zug96/Downloads /home/zug96/Área de trabalho
+2025-05-02 03:00:01 - Arquivo de log: /home/zug96/Scripts/organizador.log
+2025-05-02 03:00:01 - ==============================================
+2025-05-02 03:00:01 - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 03:00:01 - Processando: 'google-chrome-stable_current_amd64.deb' (Local: '/home/zug96/Downloads')
+2025-05-02 03:00:01 -   -> IGNORANDO: Arquivo instalador 'google-chrome-stable_current_amd64.deb'
+2025-05-02 03:00:01 - Processando: 'code_1.99.3-1744761595_amd64.deb' (Local: '/home/zug96/Downloads')
+2025-05-02 03:00:01 -   -> IGNORANDO: Arquivo instalador 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 03:00:01 - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 03:00:01 - Processando: 'gnome-online-accounts-gtk.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'gnome-online-accounts-gtk.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - Processando: 'webapp-manager.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'webapp-manager.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - Processando: 'mintinstall.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'mintinstall.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - Processando: 'org.bluesabre.Mugshot.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'org.bluesabre.Mugshot.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - Processando: 'xfce4-screenshooter.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'xfce4-screenshooter.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - Processando: 'code.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'code.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - Processando: 'blueman-manager.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'blueman-manager.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - Processando: 'sticky.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'sticky.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - Processando: 'org.gnome.Calculator.desktop' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 03:00:01 -   -> SUCESSO: Movido 'org.gnome.Calculator.desktop' de '/home/zug96/Área de trabalho' para '/home/zug96/Outros'
+2025-05-02 03:00:01 - ==============================================
+2025-05-02 03:00:01 - Execução do script concluída.
+2025-05-02 03:00:01 - ==============================================
