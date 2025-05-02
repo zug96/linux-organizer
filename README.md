@@ -102,6 +102,11 @@ Execute os comandos a partir da pasta onde o script está localizado (ex: `~/Scr
 
 ---
 
+## 📜 Licença
+
+Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
 *Script desenvolvido como parte de um aprendizado em Python Scripting no Linux. Sinta-se à vontade para usar e modificar.*
 
-*Licença: MIT*
+---
