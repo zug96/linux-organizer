@@ -1,0 +1,47 @@
+2025-05-02 01:51:14,467 - INFO - ==============================================
+2025-05-02 01:51:14,467 - INFO - --- Iniciando Script Organizador Python ---
+2025-05-02 01:51:14,468 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de Trabalho']
+2025-05-02 01:51:14,468 - INFO - ==============================================
+2025-05-02 01:51:14,468 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 01:51:14,468 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 01:51:14,468 - WARNING - Diretório de origem não encontrado ou inválido: '/home/zug96/Área de Trabalho'. Pulando.
+2025-05-02 01:51:14,468 - INFO - ==============================================
+2025-05-02 01:51:14,468 - INFO - --- Script Organizador Python Concluído ---
+2025-05-02 01:51:14,468 - INFO - Resumo: 1 arquivos processados, 0 movidos, 1 ignorados/colisões, 0 erros.
+2025-05-02 01:51:14,468 - INFO - ==============================================
+2025-05-02 01:52:57,259 - INFO - ==============================================
+2025-05-02 01:52:57,259 - INFO - --- Iniciando Script Organizador Python ---
+2025-05-02 01:52:57,259 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de trabalho']
+2025-05-02 01:52:57,259 - INFO - ==============================================
+2025-05-02 01:52:57,259 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 01:52:57,260 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 01:52:57,260 - INFO - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 01:52:57,262 - INFO -   -> SUCESSO: Movido 'code.desktop' para '/home/zug96/Outros'
+2025-05-02 01:52:57,262 - INFO - ==============================================
+2025-05-02 01:52:57,262 - INFO - --- Script Organizador Python Concluído ---
+2025-05-02 01:52:57,262 - INFO - Resumo: 2 arquivos processados, 1 movidos, 1 ignorados/colisões, 0 erros.
+2025-05-02 01:52:57,262 - INFO - ==============================================
+2025-05-02 02:02:22,961 - INFO - ==============================================
+2025-05-02 02:02:22,961 - INFO - --- Iniciando Script Organizador Python v1.1 ---
+2025-05-02 02:02:22,962 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de trabalho']
+2025-05-02 02:02:22,962 - INFO - ==============================================
+2025-05-02 02:02:22,962 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 02:02:22,963 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 02:02:22,963 - INFO - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 02:02:22,966 - INFO -   -> SUCESSO: Movido 'teste.desktop' para '/home/zug96/Outros'
+2025-05-02 02:02:22,966 - INFO - ==============================================
+2025-05-02 02:02:22,966 - INFO - --- Script Organizador Python Concluído ---
+2025-05-02 02:02:22,967 - INFO - Resumo: 2 arquivos verificados, 1 movidos, 1 ignorados/colisões/desktop, 0 erros.
+2025-05-02 02:02:22,967 - INFO - ==============================================
+2025-05-02 02:06:48,987 - INFO - ==============================================
+2025-05-02 02:06:48,989 - INFO - --- Iniciando Script Organizador Python v1.1.1 ---
+2025-05-02 02:06:48,989 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de trabalho']
+2025-05-02 02:06:48,989 - INFO - ==============================================
+2025-05-02 02:06:48,990 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 02:06:48,991 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 02:06:48,991 - INFO - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 02:06:48,991 - INFO -   -> Ignorando (App Fixo/Desktop): 'teste.desktop'
+2025-05-02 02:06:48,991 - INFO - ==============================================
+2025-05-02 02:06:48,992 - INFO - --- Script Organizador Python Concluído ---
+2025-05-02 02:06:48,992 - INFO - Resumo: 1 arquivos verificados, 0 movidos, 2 ignorados/colisões/desktop, 0 erros.
+2025-05-02 02:06:48,992 - INFO - ==============================================
