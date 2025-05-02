@@ -1,0 +1,67 @@
+
+2025-05-02 00:38:40 - ==============================================
+2025-05-02 00:38:40 - Iniciando execução do script organizador...
+2025-05-02 00:38:40 - Diretórios de origem: /home/zug96/Downloads /home/zug96/Área de trabalho
+2025-05-02 00:38:40 - Arquivo de log: /home/zug96/Scripts/organizador.log
+2025-05-02 00:38:40 - ==============================================
+2025-05-02 00:38:40 - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 00:38:40 - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 00:38:40 - ==============================================
+2025-05-02 00:38:40 - Execução do script concluída.
+2025-05-02 00:38:40 - ==============================================
+
+2025-05-02 00:38:59 - ==============================================
+2025-05-02 00:38:59 - Iniciando execução do script organizador...
+2025-05-02 00:38:59 - Diretórios de origem: /home/zug96/Downloads /home/zug96/Área de trabalho
+2025-05-02 00:38:59 - Arquivo de log: /home/zug96/Scripts/organizador.log
+2025-05-02 00:38:59 - ==============================================
+2025-05-02 00:38:59 - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 00:38:59 - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 00:38:59 - ==============================================
+2025-05-02 00:38:59 - Execução do script concluída.
+2025-05-02 00:38:59 - ==============================================
+
+2025-05-02 00:50:01 - ==============================================
+2025-05-02 00:50:01 - Iniciando execução do script organizador...
+2025-05-02 00:50:01 - Diretórios de origem: /home/zug96/Downloads /home/zug96/Área de trabalho
+2025-05-02 00:50:01 - Arquivo de log: /home/zug96/Scripts/organizador.log
+2025-05-02 00:50:01 - ==============================================
+2025-05-02 00:50:01 - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 00:50:01 - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 00:50:01 - Processando: 'imagem_teste-3.jpg' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 00:50:01 -   -> SUCESSO: Movido 'imagem_teste-3.jpg' de '/home/zug96/Área de trabalho' para '/home/zug96/Imagens'
+2025-05-02 00:50:01 - Processando: 'texto_teste-3.txt' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 00:50:01 -   -> SUCESSO: Movido 'texto_teste-3.txt' de '/home/zug96/Área de trabalho' para '/home/zug96/Documentos'
+2025-05-02 00:50:01 - ==============================================
+2025-05-02 00:50:01 - Execução do script concluída.
+2025-05-02 00:50:01 - ==============================================
+
+2025-05-02 00:55:01 - ==============================================
+2025-05-02 00:55:01 - Iniciando execução do script organizador...
+2025-05-02 00:55:01 - Diretórios de origem: /home/zug96/Downloads /home/zug96/Área de trabalho
+2025-05-02 00:55:01 - Arquivo de log: /home/zug96/Scripts/organizador.log
+2025-05-02 00:55:01 - ==============================================
+2025-05-02 00:55:01 - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 00:55:01 - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 00:55:01 - ==============================================
+2025-05-02 00:55:01 - Execução do script concluída.
+2025-05-02 00:55:01 - ==============================================
+
+2025-05-02 01:00:01 - ==============================================
+2025-05-02 01:00:01 - Iniciando execução do script organizador...
+2025-05-02 01:00:01 - Diretórios de origem: /home/zug96/Downloads /home/zug96/Área de trabalho
+2025-05-02 01:00:01 - Arquivo de log: /home/zug96/Scripts/organizador.log
+2025-05-02 01:00:01 - ==============================================
+2025-05-02 01:00:01 - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 01:00:01 - Processando: 'code_1.OS08lsBF.99.3-1744761595_amd64.deb.part' (Local: '/home/zug96/Downloads')
+2025-05-02 01:00:01 -   -> SUCESSO: Movido 'code_1.OS08lsBF.99.3-1744761595_amd64.deb.part' de '/home/zug96/Downloads' para '/home/zug96/Outros'
+2025-05-02 01:00:01 - Processando: 'code_1.99.3-1744761595_amd64.deb' (Local: '/home/zug96/Downloads')
+2025-05-02 01:00:01 -   -> IGNORANDO: Arquivo instalador 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 01:00:01 - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 01:00:01 - Processando: 'texto_teste-4.txt' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 01:00:01 -   -> SUCESSO: Movido 'texto_teste-4.txt' de '/home/zug96/Área de trabalho' para '/home/zug96/Documentos'
+2025-05-02 01:00:01 - Processando: 'imagem_teste-4.png' (Local: '/home/zug96/Área de trabalho')
+2025-05-02 01:00:01 -   -> SUCESSO: Movido 'imagem_teste-4.png' de '/home/zug96/Área de trabalho' para '/home/zug96/Imagens'
+2025-05-02 01:00:01 - ==============================================
+2025-05-02 01:00:01 - Execução do script concluída.
+2025-05-02 01:00:01 - ==============================================
