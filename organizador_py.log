@@ -45,3 +45,67 @@
 2025-05-02 02:06:48,992 - INFO - --- Script Organizador Python Concluído ---
 2025-05-02 02:06:48,992 - INFO - Resumo: 1 arquivos verificados, 0 movidos, 2 ignorados/colisões/desktop, 0 erros.
 2025-05-02 02:06:48,992 - INFO - ==============================================
+2025-05-02 02:36:06,149 - INFO - ==============================================
+2025-05-02 02:36:06,149 - INFO - --- Iniciando Script Organizador Python v1.3.0 ---
+2025-05-02 02:36:06,149 - INFO - Usando configuração de: '/home/zug96/Scripts/config.json'
+2025-05-02 02:36:06,150 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de trabalho']
+2025-05-02 02:36:06,150 - INFO - ==============================================
+2025-05-02 02:36:06,150 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 02:36:06,151 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 02:36:06,151 - INFO - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 02:36:06,153 - INFO -   -> SUCESSO: Movido 'code.desktop' para '/home/zug96/Outros'
+2025-05-02 02:36:06,153 - INFO -   -> SUCESSO: Movido 'teste.desktop' para '/home/zug96/Outros'
+2025-05-02 02:36:06,154 - INFO - ==============================================
+2025-05-02 02:36:06,154 - INFO - --- Script Organizador Python Concluído ---
+2025-05-02 02:36:06,154 - INFO - Resumo: 3 arquivos verificados, 2 movidos, 1 ignorados/colisões/desktop, 0 erros.
+2025-05-02 02:36:06,154 - INFO - ==============================================
+2025-05-02 02:48:52,370 - INFO - ==============================================
+2025-05-02 02:48:52,371 - INFO - --- Iniciando Script Organizador Python v1.3.1 ---
+2025-05-02 02:48:52,371 - INFO - Usando configuração de: '/home/zug96/Scripts/config.json'
+2025-05-02 02:48:52,371 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de trabalho']
+2025-05-02 02:48:52,371 - INFO - ==============================================
+2025-05-02 02:48:52,371 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 02:48:52,372 - INFO -   -> Ignorando (extensão na lista): 'google-chrome-stable_current_amd64.deb'
+2025-05-02 02:48:52,372 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 02:48:52,373 - INFO -   -> Ignorando (extensão na lista): 'google-chrome-stable_current_amd64.1yay17zl.deb.part'
+2025-05-02 02:48:52,373 - INFO - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 02:48:52,373 - INFO -   -> Ignorando (extensão na lista): 'code_1.OS08lsBF.99.3-1744761595_amd64.deb.part'
+2025-05-02 02:48:52,373 - INFO -   -> Ignorando (App Fixo/Desktop): 'gnome-online-accounts-gtk.desktop'
+2025-05-02 02:48:52,373 - INFO -   -> Ignorando (App Fixo/Desktop): 'webapp-manager.desktop'
+2025-05-02 02:48:52,373 - INFO -   -> Ignorando (App Fixo/Desktop): 'mintinstall.desktop'
+2025-05-02 02:48:52,373 - INFO -   -> Ignorando (App Fixo/Desktop): 'org.bluesabre.Mugshot.desktop'
+2025-05-02 02:48:52,373 - INFO -   -> Ignorando (App Fixo/Desktop): 'xfce4-screenshooter.desktop'
+2025-05-02 02:48:52,373 - INFO -   -> Ignorando (App Fixo/Desktop): 'code.desktop'
+2025-05-02 02:48:52,374 - INFO -   -> Ignorando (App Fixo/Desktop): 'blueman-manager.desktop'
+2025-05-02 02:48:52,374 - INFO -   -> Ignorando (App Fixo/Desktop): 'teste.desktop'
+2025-05-02 02:48:52,374 - INFO -   -> Ignorando (App Fixo/Desktop): 'sticky.desktop'
+2025-05-02 02:48:52,374 - INFO -   -> Ignorando (App Fixo/Desktop): 'org.gnome.Calculator.desktop'
+2025-05-02 02:48:52,374 - INFO - ==============================================
+2025-05-02 02:48:52,374 - INFO - --- Script Organizador Python Concluído ---
+2025-05-02 02:48:52,374 - INFO - Resumo: 4 arquivos verificados, 0 movidos, 14 ignorados/colisões/desktop, 0 erros.
+2025-05-02 02:48:52,374 - INFO - ==============================================
+2025-05-02 02:59:46,303 - INFO - Logging configurado. Arquivo de log: '/home/zug96/Scripts/organizador_py.log'
+2025-05-02 02:59:46,305 - INFO - ==============================================
+2025-05-02 02:59:46,306 - INFO - --- Iniciando Script Organizador Python v1.4.0 ---
+2025-05-02 02:59:46,306 - INFO - Usando configuração de: '/home/zug96/Scripts/config.json'
+2025-05-02 02:59:46,306 - INFO - Argumentos recebidos: Namespace(config=None, dry_run=True)
+2025-05-02 02:59:46,306 - WARNING - ### MODO DE SIMULAÇÃO (DRY RUN) ATIVADO - NENHUM ARQUIVO SERÁ MOVIDO ###
+2025-05-02 02:59:46,306 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de trabalho']
+2025-05-02 02:59:46,306 - INFO - ==============================================
+2025-05-02 02:59:46,307 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-02 02:59:46,307 - INFO -   -> Ignorando (extensão na lista): 'google-chrome-stable_current_amd64.deb'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-02 02:59:46,308 - INFO - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'gnome-online-accounts-gtk.desktop'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'webapp-manager.desktop'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'mintinstall.desktop'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'org.bluesabre.Mugshot.desktop'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'xfce4-screenshooter.desktop'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'code.desktop'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'blueman-manager.desktop'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'sticky.desktop'
+2025-05-02 02:59:46,308 - INFO -   -> Ignorando (App Fixo/Desktop): 'org.gnome.Calculator.desktop'
+2025-05-02 02:59:46,309 - INFO - ==============================================
+2025-05-02 02:59:46,309 - INFO - --- Script Organizador Python Concluído ---
+2025-05-02 02:59:46,309 - INFO - Resumo: 2 arquivos verificados, 0 movidos, 11 ignorados/colisões/desktop, 0 erros.
+2025-05-02 02:59:46,309 - INFO - ==============================================

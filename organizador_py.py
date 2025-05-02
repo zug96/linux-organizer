@@ -2,124 +2,172 @@
 # -*- coding: utf-8 -*-
 
 """
-Organizador de Arquivos Automático v1.1.1 (Python)
+Organizador de Arquivos Automático v1.4.0 (Python)
 
-Organiza arquivos de diretórios de origem para pastas de destino
-categorizadas por tipo de arquivo. Inclui logging e ignora
-arquivos .desktop na Área de trabalho (nome corrigido).
+Organiza arquivos lendo config JSON. Inclui logging.
+Ignora arquivos .desktop na Área de trabalho.
+NÃO renomeia em caso de colisão.
+Aceita argumentos de linha de comando (--config, --dry-run).
 """
 
 import shutil
 import logging
 from pathlib import Path
 from datetime import datetime
+import json
+import argparse # Importa o módulo argparse
 
-# --- Configurações ---
-
-# Diretórios de Origem (use Path para caminhos)
-# Pegar o diretório home do usuário atual
+# --- Constantes e Configuração Inicial ---
 HOME_DIR = Path.home()
-# *** CORREÇÃO APLICADA AQUI ***
-DESKTOP_DIR_NAME = "Área de trabalho" # Nome correto do diretório
-SOURCE_DIRS = [
-    HOME_DIR / "Downloads",
-    HOME_DIR / DESKTOP_DIR_NAME, # Usando a variável com nome correto
-    # Adicione outros diretórios aqui se desejar
-]
+# O nome padrão do arquivo de configuração
+DEFAULT_CONFIG_FILENAME = "config.json"
+# Caminho padrão para procurar config (primeiro ao lado do script, depois em ~/Scripts)
+script_path = Path(__file__).resolve()
+DEFAULT_CONFIG_PATH = script_path.parent / DEFAULT_CONFIG_FILENAME
+if not DEFAULT_CONFIG_PATH.is_file():
+    DEFAULT_CONFIG_PATH = HOME_DIR / "Scripts" / DEFAULT_CONFIG_FILENAME
 
-# Diretórios de Destino (Mapeamento Nome Categoria -> Caminho)
-DEST_DIRS = {
-    "Imagens": HOME_DIR / "Imagens",
-    "Documentos": HOME_DIR / "Documentos",
-    "Videos": HOME_DIR / "Videos",
-    "Musicas": HOME_DIR / "Musicas",
-    "Scripts": HOME_DIR / "Scripts",
-    "Outros": HOME_DIR / "Outros"
-}
+# --- Funções ---
 
-# Mapeamento Extensão (minúscula) -> Nome Categoria (chave de DEST_DIRS)
-EXT_MAP = {
-    # Imagens
-    '.jpg': "Imagens", '.jpeg': "Imagens", '.png': "Imagens", '.gif': "Imagens",
-    '.bmp': "Imagens", '.svg': "Imagens", '.webp': "Imagens", '.heic': "Imagens",
-    '.avif': "Imagens",
-    # Documentos
-    '.pdf': "Documentos", '.doc': "Documentos", '.docx': "Documentos",
-    '.txt': "Documentos", '.odt': "Documentos", '.rtf': "Documentos",
-    '.md': "Documentos", '.epub': "Documentos", '.xls': "Documentos",
-    '.xlsx': "Documentos", '.ods': "Documentos", '.csv': "Documentos",
-    '.ppt': "Documentos", '.pptx': "Documentos", '.odp': "Documentos",
-    # Vídeos
-    '.mp4': "Videos", '.avi': "Videos", '.mkv': "Videos", '.mov': "Videos",
-    '.wmv': "Videos", '.flv': "Videos", '.webm': "Videos",
-    # Músicas
-    '.mp3': "Musicas", '.wav': "Musicas", '.flac': "Musicas", '.ogg': "Musicas",
-    '.aac': "Musicas", '.m4a': "Musicas",
-    # Scripts
-    '.sh': "Scripts", '.py': "Scripts", '.js': "Scripts", '.rb': "Scripts",
-    # Adicione mais extensões e categorias aqui
-}
+def load_config(config_path: Path) -> dict | None:
+    """Carrega e valida minimamente as configurações do arquivo JSON."""
+    # Log inicial para console caso logger não esteja pronto
+    print(f"INFO: Tentando carregar configuração de '{config_path}'...")
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config_data = json.load(f)
+        required_keys = [
+            "source_directories", "destination_directories", "extension_map",
+            "ignored_extensions", "log_file_path", "desktop_dir_name"
+        ]
+        if not all(key in config_data for key in required_keys):
+            print(f"ERRO: Arquivo de configuração '{config_path}' está incompleto.")
+            return None
+        print(f"INFO: Configuração carregada com sucesso de '{config_path}'")
+        return config_data
+    except FileNotFoundError:
+        print(f"ERRO CRÍTICO: Arquivo de configuração '{config_path}' não encontrado!")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"ERRO CRÍTICO: Falha ao decodificar JSON em '{config_path}'. Erro: {e}")
+        return None
+    except Exception as e:
+        print(f"ERRO inesperado ao carregar config de '{config_path}': {e}")
+        return None
 
-# Extensões a serem IGNORADAS (minúsculas) - Usando um set para eficiência
-IGNORED_EXTENSIONS = {
-    '.zip', '.rar', '.tar', '.gz', '.7z', '.bz2', # Compactados
-    '.iso', '.img',                               # Imagens de disco
-    '.deb', '.appimage',                          # Instaladores
-    '.part', '.crdownload', '.tmp',               # Arquivos temporários/incompletos
-}
+def resolve_path(path_str: str) -> Path:
+    """Resolve um caminho string para um objeto Path absoluto (expandindo ~)."""
+    return Path(path_str).expanduser().resolve(strict=False)
 
-# Arquivo de Log
-# Cria a pasta Scripts se não existir, antes de definir o LOG_FILE
-scripts_dir = HOME_DIR / "Scripts"
-scripts_dir.mkdir(parents=True, exist_ok=True)
-LOG_FILE = scripts_dir / "organizador_py.log"
+def setup_logging(log_file_path_str: str) -> logging.Logger | None:
+    """Configura o logging para arquivo e console."""
+    try:
+        log_file_path = resolve_path(log_file_path_str)
+        log_file_path.parent.mkdir(parents=True, exist_ok=True) # Garante que dir do log existe
 
-# --- Configuração do Logging ---
-# Configura para logar tanto no arquivo quanto no console
-log_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-log_level = logging.INFO # Nível de detalhe (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+        log_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        log_level = logging.INFO
 
-# Handler para o arquivo
-file_handler = logging.FileHandler(LOG_FILE, encoding='utf-8')
-file_handler.setFormatter(log_formatter)
+        logger = logging.getLogger()
+        logger.setLevel(log_level)
+        if logger.hasHandlers():
+            logger.handlers.clear()
 
-# Handler para o console
-console_handler = logging.StreamHandler()
-console_handler.setFormatter(log_formatter)
+        # Handler para o arquivo
+        file_handler = logging.FileHandler(log_file_path, encoding='utf-8')
+        file_handler.setFormatter(log_formatter)
+        logger.addHandler(file_handler)
 
-# Pega o logger raiz e adiciona os handlers
-logger = logging.getLogger()
-logger.setLevel(log_level)
-# Remove handlers antigos (caso o script seja re-executado no mesmo processo)
-if logger.hasHandlers():
-    logger.handlers.clear()
-logger.addHandler(file_handler)
-logger.addHandler(console_handler)
+        # Handler para o console
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(log_formatter)
+        logger.addHandler(console_handler)
 
+        logger.info(f"Logging configurado. Arquivo de log: '{log_file_path}'") # Log após configurar
+        return logger
+    except Exception as e:
+        print(f"ERRO CRÍTICO AO CONFIGURAR LOGGING para '{log_file_path_str}': {e}")
+        return None
 
-# --- Funções Auxiliares ---
-
-def check_if_in_dest_dir(file_path: Path, dest_dirs_paths: list) -> bool:
+def check_if_in_dest_dir(file_path: Path, dest_dirs_paths: list, scripts_dir: Path) -> bool:
     """Verifica se o arquivo já está dentro de algum dos diretórios de destino ou scripts."""
     try:
-        # Compara o caminho pai do arquivo com os caminhos de destino
+        file_parent_resolved = file_path.parent.resolve()
         for dest_path in dest_dirs_paths:
-             # Usar resolve() para obter caminhos absolutos canônicos pode ajudar na comparação
-            if file_path.parent.resolve() == dest_path.resolve() or \
-               file_path.parent.resolve().is_relative_to(dest_path.resolve()):
+            if file_parent_resolved.samefile(dest_path):
                 return True
         # Verifica também se está na pasta de scripts
-        if file_path.parent.resolve() == scripts_dir.resolve():
+        if file_parent_resolved.samefile(scripts_dir):
              return True
+    except FileNotFoundError:
+        pass # Se um diretório não existe, não pode ser o mesmo
     except Exception as e:
-        logger.debug(f"Erro não crítico ao verificar parentesco de '{file_path}': {e}")
+        # Usar logger aqui pode ser problemático se o logging ainda não estiver pronto
+        # print(f"Debug: Erro não crítico ao verificar parentesco de '{file_path}': {e}")
+        pass
     return False
 
-# --- Lógica Principal ---
 
+# --- Lógica Principal ---
 if __name__ == "__main__":
+    # --- Configuração do Argument Parser ---
+    parser = argparse.ArgumentParser(
+        description="Organiza arquivos baseado em extensões, lendo config JSON.",
+        epilog="Exemplo: python3 organizador_py.py -c minha_config.json -n"
+    )
+    parser.add_argument(
+        "-c", "--config",
+        type=str,
+        default=None,
+        help=f"Caminho para o arquivo de configuração JSON. Padrão: procura '{DEFAULT_CONFIG_FILENAME}' ao lado do script ou em ~/Scripts/"
+    )
+    parser.add_argument(
+        "-n", "--dry-run",
+        action="store_true",
+        help="Modo de simulação (Dry Run). Mostra o que seria feito, mas não move arquivos."
+    )
+    # --- Processa os Argumentos ---
+    args = parser.parse_args()
+
+    # --- Determina o Caminho do Arquivo de Configuração a Usar ---
+    config_to_load = DEFAULT_CONFIG_PATH # Começa com o padrão
+    if args.config:
+        # Se o usuário especificou --config, usa esse caminho
+        config_to_load = resolve_path(args.config)
+        # Usamos print aqui pois o logger pode não estar configurado ainda
+        print(f"INFO: Usando arquivo de configuração especificado via argumento: '{config_to_load}'")
+
+    # Carrega a configuração ANTES de configurar o logging principal
+    config = load_config(config_to_load)
+    if config is None:
+        exit(1) # Aborta se a configuração falhar
+
+    # Configura o logging definitivo usando o caminho do arquivo de config
+    logger = setup_logging(config["log_file_path"])
+    if logger is None:
+        exit(1) # Aborta se o logging falhar
+
+    # Processa as configurações lidas do JSON
+    try:
+        SOURCE_DIRS = [resolve_path(p) for p in config["source_directories"]]
+        DEST_DIRS = {cat: resolve_path(p) for cat, p in config["destination_directories"].items()}
+        EXT_MAP = {ext.lower(): cat for ext, cat in config["extension_map"].items()}
+        IGNORED_EXTENSIONS = {ext.lower() for ext in config["ignored_extensions"]}
+        DESKTOP_DIR_NAME = config["desktop_dir_name"]
+        desktop_path = resolve_path(f"~/{DESKTOP_DIR_NAME}")
+        # Define scripts_dir a partir do caminho do log no config
+        scripts_dir = resolve_path(Path(config["log_file_path"]).parent)
+    except Exception as e:
+        logger.error(f"Erro ao processar dados da configuração: {e}")
+        exit(1)
+
+    # Log dos argumentos usados e modo dry-run
     logger.info("==============================================")
-    logger.info("--- Iniciando Script Organizador Python v1.1.1 ---")
+    logger.info(f"--- Iniciando Script Organizador Python v1.4.0 ---")
+    logger.info(f"Usando configuração de: '{config_to_load}'")
+    logger.info(f"Argumentos recebidos: {args}")
+    if args.dry_run:
+        logger.warning("### MODO DE SIMULAÇÃO (DRY RUN) ATIVADO - NENHUM ARQUIVO SERÁ MOVIDO ###")
     logger.info(f"Diretórios de Origem: {[str(d) for d in SOURCE_DIRS]}")
     logger.info("==============================================")
 
@@ -134,52 +182,42 @@ if __name__ == "__main__":
     moved_files = 0
     skipped_files = 0
     error_files = 0
-    dest_dir_paths = list(DEST_DIRS.values()) # Lista de Paths para verificação
-    desktop_path = HOME_DIR / DESKTOP_DIR_NAME # Path correto para a área de trabalho
+    dest_dir_paths = list(DEST_DIRS.values())
 
     # Loop pelos diretórios de origem
     for source_dir_path in SOURCE_DIRS:
-        # Verifica se o diretório de origem realmente existe ANTES de iterar
         if not source_dir_path.is_dir():
             logger.warning(f"Diretório de origem não encontrado ou inválido: '{source_dir_path}'. Pulando.")
             continue
-
         logger.info(f"--- Verificando diretório: '{source_dir_path}' ---")
 
-        # Encontra arquivos recursivamente usando rglob('*')
         for file_path in source_dir_path.rglob('*'):
             try:
-                # Pula se não for um arquivo (ex: diretório, link simbólico)
                 if not file_path.is_file():
                     continue
 
-                # ***** INÍCIO DA VERIFICAÇÃO DE ARQUIVOS .desktop NA ÁREA DE TRABALHO (CORRIGIDO) *****
-                # Compara o diretório pai do arquivo com o Path CORRETO da Área de trabalho
-                # *** CORREÇÃO APLICADA AQUI ***
-                if file_path.parent == desktop_path and file_path.suffix.lower() == '.desktop':
-                    logger.info(f"  -> Ignorando (App Fixo/Desktop): '{file_path.name}'")
-                    skipped_files += 1
-                    continue # Pula para o próximo arquivo no loop rglob
-                # ***** FIM DA VERIFICAÇÃO DE ARQUIVOS .desktop NA ÁREA DE TRABALHO *****
+                try:
+                    if file_path.parent.samefile(desktop_path) and file_path.suffix.lower() == '.desktop':
+                        logger.info(f"  -> Ignorando (App Fixo/Desktop): '{file_path.name}'")
+                        skipped_files += 1
+                        continue
+                except FileNotFoundError:
+                     logger.warning(f"Diretório da área de trabalho '{desktop_path}' não encontrado ao verificar {file_path.name}")
+                     pass
 
-                # Pula arquivos ocultos (começam com '.')
                 if file_path.name.startswith('.'):
                     logger.debug(f"Ignorando arquivo oculto: {file_path.name}")
                     skipped_files += 1
                     continue
 
-                # Pula arquivos já em diretórios de destino ou scripts
-                if check_if_in_dest_dir(file_path, dest_dir_paths):
+                if check_if_in_dest_dir(file_path, dest_dir_paths, scripts_dir):
                     logger.debug(f"Ignorando arquivo já no destino/scripts: {file_path.name}")
                     continue
 
                 processed_files += 1
                 logger.debug(f"Processando: '{file_path.name}' (em '{file_path.parent}')")
-
-                # Pega a extensão e converte para minúscula
                 ext = file_path.suffix.lower()
 
-                # Pula se não tiver extensão ou for uma extensão ignorada
                 if not ext:
                     logger.info(f"  -> Ignorando (sem extensão): '{file_path.name}'")
                     skipped_files += 1
@@ -189,28 +227,32 @@ if __name__ == "__main__":
                     skipped_files += 1
                     continue
 
-                # Determina a categoria e o diretório de destino
-                category = EXT_MAP.get(ext, "Outros") # Usa "Outros" como padrão
+                category = EXT_MAP.get(ext, "Outros")
                 target_dir = DEST_DIRS[category]
                 target_path = target_dir / file_path.name
 
-                # Lógica para mover (sem sobrescrever por padrão nesta versão 1.1.1)
+                # Lógica de mover (considerando --dry-run)
                 if target_path.exists():
                     logger.warning(f"  -> ATENÇÃO: Arquivo '{target_path.name}' já existe em '{target_dir}'. '{file_path.name}' NÃO foi movido.")
                     skipped_files += 1
                 else:
-                    try:
-                        shutil.move(str(file_path), str(target_path))
-                        logger.info(f"  -> SUCESSO: Movido '{file_path.name}' para '{target_dir}'")
-                        moved_files += 1
-                    except Exception as e:
-                        logger.error(f"  -> ERRO: Falha ao mover '{file_path.name}' para '{target_dir}'. Detalhes: {e}")
-                        error_files += 1
+                    # *** VERIFICA O MODO DRY RUN ANTES DE MOVER ***
+                    if args.dry_run:
+                        logger.info(f"  -> [DRY RUN] Moveria '{file_path.name}' para '{target_dir}'")
+                        # Não incrementa moved_files em dry run
+                    else:
+                        # Executa o movimento real apenas se não for dry run
+                        try:
+                            shutil.move(str(file_path), str(target_path))
+                            logger.info(f"  -> SUCESSO: Movido '{file_path.name}' para '{target_dir}'")
+                            moved_files += 1
+                        except Exception as e:
+                            logger.error(f"  -> ERRO: Falha ao mover '{file_path.name}' para '{target_dir}'. Detalhes: {e}")
+                            error_files += 1
 
             except Exception as e:
                 logger.error(f"Erro inesperado ao processar o item '{file_path}': {e}")
                 error_files += 1
-
 
     logger.info("==============================================")
     logger.info("--- Script Organizador Python Concluído ---")
