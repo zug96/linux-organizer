@@ -109,3 +109,28 @@
 2025-05-02 02:59:46,309 - INFO - --- Script Organizador Python Concluído ---
 2025-05-02 02:59:46,309 - INFO - Resumo: 2 arquivos verificados, 0 movidos, 11 ignorados/colisões/desktop, 0 erros.
 2025-05-02 02:59:46,309 - INFO - ==============================================
+2025-05-03 01:30:04,070 - INFO - ==============================================
+2025-05-03 01:30:04,072 - INFO - --- Iniciando Script Organizador Python v1.4.1 ---
+2025-05-03 01:30:04,072 - INFO - Usando configuração de: '/home/zug96/Scripts/config.json'
+2025-05-03 01:30:04,072 - INFO - Argumentos recebidos: Namespace(config=None, dry_run=False)
+2025-05-03 01:30:04,072 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de trabalho']
+2025-05-03 01:30:04,072 - INFO - ==============================================
+2025-05-03 01:30:04,072 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-03 01:30:04,074 - INFO -   -> Ignorando (extensão na lista): 'google-chrome-stable_current_amd64.deb'
+2025-05-03 01:30:04,075 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-03 01:30:04,075 - INFO - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-03 01:30:04,075 - INFO -   -> Ignorando (App Fixo/Desktop): 'gnome-online-accounts-gtk.desktop'
+2025-05-03 01:30:04,076 - INFO -   -> Ignorando (App Fixo/Desktop): 'webapp-manager.desktop'
+2025-05-03 01:30:04,077 - INFO -   -> SUCESSO: Movido 'texto_teste-5.txt' para '/home/zug96/Documentos'
+2025-05-03 01:30:04,077 - INFO -   -> Ignorando (App Fixo/Desktop): 'mintinstall.desktop'
+2025-05-03 01:30:04,077 - INFO -   -> Ignorando (App Fixo/Desktop): 'xfce4-screenshooter.desktop'
+2025-05-03 01:30:04,077 - INFO -   -> Ignorando (App Fixo/Desktop): 'code.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'google-chrome.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'blueman-manager.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'teste.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'sticky.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'org.gnome.Calculator.desktop'
+2025-05-03 01:30:04,078 - INFO - ==============================================
+2025-05-03 01:30:04,078 - INFO - --- Script Organizador Python Concluído ---
+2025-05-03 01:30:04,078 - INFO - Resumo: 3 arquivos verificados, 1 movidos, 12 ignorados/colisões/desktop, 0 erros.
+2025-05-03 01:30:04,078 - INFO - ==============================================
