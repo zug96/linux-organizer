@@ -3,6 +3,8 @@
 
 # Arquivo de configuração específico do usuário (commit config.example.json em vez disso)
 config.json
+credentials.json
+token.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

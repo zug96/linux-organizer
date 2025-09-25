@@ -109,3 +109,101 @@
 2025-05-02 02:59:46,309 - INFO - --- Script Organizador Python Concluído ---
 2025-05-02 02:59:46,309 - INFO - Resumo: 2 arquivos verificados, 0 movidos, 11 ignorados/colisões/desktop, 0 erros.
 2025-05-02 02:59:46,309 - INFO - ==============================================
+2025-05-03 01:30:04,070 - INFO - ==============================================
+2025-05-03 01:30:04,072 - INFO - --- Iniciando Script Organizador Python v1.4.1 ---
+2025-05-03 01:30:04,072 - INFO - Usando configuração de: '/home/zug96/Scripts/config.json'
+2025-05-03 01:30:04,072 - INFO - Argumentos recebidos: Namespace(config=None, dry_run=False)
+2025-05-03 01:30:04,072 - INFO - Diretórios de Origem: ['/home/zug96/Downloads', '/home/zug96/Área de trabalho']
+2025-05-03 01:30:04,072 - INFO - ==============================================
+2025-05-03 01:30:04,072 - INFO - --- Verificando diretório: '/home/zug96/Downloads' ---
+2025-05-03 01:30:04,074 - INFO -   -> Ignorando (extensão na lista): 'google-chrome-stable_current_amd64.deb'
+2025-05-03 01:30:04,075 - INFO -   -> Ignorando (extensão na lista): 'code_1.99.3-1744761595_amd64.deb'
+2025-05-03 01:30:04,075 - INFO - --- Verificando diretório: '/home/zug96/Área de trabalho' ---
+2025-05-03 01:30:04,075 - INFO -   -> Ignorando (App Fixo/Desktop): 'gnome-online-accounts-gtk.desktop'
+2025-05-03 01:30:04,076 - INFO -   -> Ignorando (App Fixo/Desktop): 'webapp-manager.desktop'
+2025-05-03 01:30:04,077 - INFO -   -> SUCESSO: Movido 'texto_teste-5.txt' para '/home/zug96/Documentos'
+2025-05-03 01:30:04,077 - INFO -   -> Ignorando (App Fixo/Desktop): 'mintinstall.desktop'
+2025-05-03 01:30:04,077 - INFO -   -> Ignorando (App Fixo/Desktop): 'xfce4-screenshooter.desktop'
+2025-05-03 01:30:04,077 - INFO -   -> Ignorando (App Fixo/Desktop): 'code.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'google-chrome.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'blueman-manager.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'teste.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'sticky.desktop'
+2025-05-03 01:30:04,078 - INFO -   -> Ignorando (App Fixo/Desktop): 'org.gnome.Calculator.desktop'
+2025-05-03 01:30:04,078 - INFO - ==============================================
+2025-05-03 01:30:04,078 - INFO - --- Script Organizador Python Concluído ---
+2025-05-03 01:30:04,078 - INFO - Resumo: 3 arquivos verificados, 1 movidos, 12 ignorados/colisões/desktop, 0 erros.
+2025-05-03 01:30:04,078 - INFO - ==============================================
+2025-05-04 15:59:58,006 - INFO - ==============================================
+2025-05-04 15:59:58,007 - INFO - --- Iniciando Script Agenda Forecast v2.0 ---
+2025-05-04 15:59:58,008 - INFO - ==============================================
+2025-05-04 15:59:58,010 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-05-04 15:59:58,014 - INFO - Buscando eventos da próxima semana (05/05 a 11/05)...
+2025-05-04 15:59:59,040 - INFO - Evento encontrado fora: 'Viagem Caldas Novas' em 'Caldas Novas, GO, Brasil'
+2025-05-04 15:59:59,040 - INFO - Geocoding: Buscando coords para 'Caldas Novas, GO, Brasil'
+2025-05-04 15:59:59,915 - INFO - Geocoding: Coords encontradas: Lat=-17.745, Lon=-48.625
+2025-05-04 15:59:59,915 - INFO - OneCall API: Buscando previsão para Lat=-17.745, Lon=-48.625
+2025-05-04 16:00:02,015 - INFO - Preparando para enviar email para: ccampanagus@gmail.com,madutriques@gmail.com
+2025-05-04 16:00:05,111 - INFO - Tentando login no servidor SMTP...
+2025-05-04 16:00:05,589 - INFO - Login SMTP bem-sucedido. Enviando mensagem...
+2025-05-04 16:00:07,905 - INFO - Email enviado com sucesso!
+2025-05-04 16:00:08,222 - INFO - --- Script Agenda Forecast Concluído ---
+2025-05-04 16:04:59,989 - INFO - ==============================================
+2025-05-04 16:04:59,989 - INFO - --- Iniciando Script Agenda Forecast v2.0 ---
+2025-05-04 16:04:59,989 - INFO - ==============================================
+2025-05-04 16:04:59,990 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-05-04 16:04:59,995 - INFO - Buscando eventos da próxima semana (05/05 a 11/05)...
+2025-05-04 16:05:00,807 - INFO - Evento encontrado fora: 'Viagem Caldas Novas' em 'Caldas Novas, GO, Brasil'
+2025-05-04 16:05:00,808 - INFO - Geocoding: Buscando coords para 'Caldas Novas, GO, Brasil'
+2025-05-04 16:05:01,542 - INFO - Geocoding: Coords encontradas: Lat=-17.745, Lon=-48.625
+2025-05-04 16:05:01,543 - INFO - OneCall API: Buscando previsão para Lat=-17.745, Lon=-48.625
+2025-05-04 16:05:03,273 - INFO - Preparando para enviar email para: ccampanagus@gmail.com,madutriques@gmail.com
+2025-05-04 16:05:11,255 - INFO - Tentando login no servidor SMTP...
+2025-05-04 16:05:11,991 - INFO - Login SMTP bem-sucedido. Enviando mensagem...
+2025-05-04 16:05:15,012 - INFO - Email enviado com sucesso!
+2025-05-04 16:05:16,020 - INFO - --- Script Agenda Forecast Concluído ---
+2025-05-07 23:10:05,019 - INFO - Token salvo em /home/zug96/Scripts/agenda-weather-forecast/token.json
+2025-05-07 23:10:05,021 - INFO - ==============================================
+2025-05-07 23:10:05,021 - INFO - --- Iniciando Script Agenda Forecast v2.1 ---
+2025-05-07 23:10:05,021 - INFO - ==============================================
+2025-05-07 23:10:05,022 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-05-07 23:10:05,027 - INFO - Buscando eventos da próxima semana (12/05/2025 a 18/05/2025)...
+2025-05-07 23:10:05,453 - INFO - Evento encontrado fora: 'Viagem Caldas Novas' em 'Caldas Novas, GO, Brasil'
+2025-05-07 23:10:05,455 - INFO - Geocoding: Buscando coords para 'Caldas Novas, GO, Brasil'
+2025-05-07 23:10:06,019 - INFO - Geocoding: Coords encontradas: Lat=-17.745, Lon=-48.625
+2025-05-07 23:10:06,020 - INFO - OneCall API: Buscando previsão para Lat=-17.745, Lon=-48.625
+2025-05-07 23:10:06,731 - INFO - Preparando para enviar email para: ccampanagus@gmail.com,madutriques@gmailcom
+2025-05-07 23:10:08,172 - INFO - Tentando login no servidor SMTP...
+2025-05-07 23:10:08,591 - INFO - Login SMTP bem-sucedido. Enviando mensagem...
+2025-05-07 23:10:10,219 - INFO - Email enviado com sucesso!
+2025-05-07 23:10:10,442 - INFO - --- Script Agenda Forecast Concluído ---
+2025-05-07 23:16:59,946 - INFO - Logging configurado. Saída no console e no arquivo: '/home/zug96/Scripts/organizador_py.log'
+2025-05-07 23:16:59,948 - INFO - ==============================================
+2025-05-07 23:16:59,948 - INFO - --- Iniciando Script Agenda Forecast v2.2 ---
+2025-05-07 23:16:59,948 - INFO - ==============================================
+2025-05-07 23:16:59,949 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-05-07 23:16:59,953 - INFO - Buscando eventos da próxima semana (12/05/2025 a 18/05/2025)...
+2025-05-07 23:17:00,381 - INFO - Evento encontrado fora: 'Viagem Caldas Novas' em 'Caldas Novas, GO, Brasil'
+2025-05-07 23:17:00,382 - INFO - Geocoding: Buscando coords para 'Caldas Novas, GO, Brasil'
+2025-05-07 23:17:05,818 - INFO - Geocoding: Coords encontradas: Lat=-17.745, Lon=-48.625
+2025-05-07 23:17:05,818 - INFO - OneCall API: Buscando previsão para Lat=-17.745, Lon=-48.625
+2025-05-07 23:17:06,270 - INFO - Preparando para enviar email para: ccampanagus@gmail.com,madutriques@gmailcom
+2025-05-07 23:17:08,225 - INFO - Tentando login no servidor SMTP...
+2025-05-07 23:17:08,635 - INFO - Login SMTP bem-sucedido. Enviando mensagem...
+2025-05-07 23:17:10,279 - INFO - Email enviado com sucesso!
+2025-05-07 23:17:10,489 - INFO - --- Script Agenda Forecast Concluído ---
+2025-05-07 23:23:00,966 - INFO - Logging configurado. Saída no console e no arquivo: '/home/zug96/Scripts/organizador_py.log'
+2025-05-07 23:23:00,969 - INFO - ==============================================
+2025-05-07 23:23:00,969 - INFO - --- Iniciando Script Agenda Forecast v2.2 ---
+2025-05-07 23:23:00,969 - INFO - ==============================================
+2025-05-07 23:23:00,971 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-05-07 23:23:00,973 - INFO - Buscando eventos da próxima semana (12/05/2025 a 18/05/2025)...
+2025-05-07 23:23:01,384 - INFO - Evento encontrado fora: 'Viagem Caldas Novas' em 'Caldas Novas, GO, Brasil'
+2025-05-07 23:23:01,385 - INFO - Geocoding: Buscando coords para 'Caldas Novas, GO, Brasil'
+2025-05-07 23:23:01,765 - INFO - Geocoding: Coords encontradas: Lat=-17.745, Lon=-48.625
+2025-05-07 23:23:01,766 - INFO - OneCall API: Buscando previsão para Lat=-17.745, Lon=-48.625
+2025-05-07 23:23:02,237 - INFO - Preparando para enviar email para: ccampanagus@gmail.com,madutriques@gmail.com
+2025-05-07 23:23:04,406 - INFO - Tentando login no servidor SMTP...
+2025-05-07 23:23:04,830 - INFO - Login SMTP bem-sucedido. Enviando mensagem...
+2025-05-07 23:23:06,556 - INFO - Email enviado com sucesso!
+2025-05-07 23:23:06,794 - INFO - --- Script Agenda Forecast Concluído ---
