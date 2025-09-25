@@ -1,0 +1,1 @@
+/usr/bin/python3: can't open file '/home/zug96/Scripts/clima_comparativo.py': [Errno 2] No such file or directory
